@@ -6,9 +6,11 @@ class BlogBase(BaseModel):
     title: str
     body: str
 
+
 class Blog(BlogBase):
     class Config:
         from_attributes = True
+
 
 class ShowUser(BaseModel):
     name: str
@@ -32,3 +34,18 @@ class User(BaseModel):
     name: str
     email: str
     password: str
+
+
+class Login(BaseModel):
+    username: str
+    password: str
+
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    username: str | None = None
+
